@@ -1,6 +1,7 @@
 import { fetchMovieCast } from 'API';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Galery, Li } from './MovieInfo.styled';
 
 export default function Cast() {
   const { movieId } = useParams();
@@ -23,20 +24,20 @@ export default function Cast() {
   }
   return (
     <div>
-      <ul>
+      <Galery>
         {currentFilm?.map(({ profile_path, name, character, id }) => {
           return (
-            <li key={id}>
+            <Li key={id}>
               <img
                 src={`https://image.tmdb.org/t/p/w200${profile_path}`}
                 alt={name}
               ></img>
               <p>{name}</p>
               <p>{character}</p>
-            </li>
+            </Li>
           );
         })}
-      </ul>
+      </Galery>
     </div>
   );
 }

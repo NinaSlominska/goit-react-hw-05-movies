@@ -14,8 +14,6 @@ export default function Reviews() {
       try {
         const film = await fetchMovieReviews(movieId);
         setCurentFilm(film.results);
-
-        console.log(film.results);
       } catch (error) {}
     };
     fetch();

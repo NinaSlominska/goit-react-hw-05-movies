@@ -1,22 +1,23 @@
 import { Suspense } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { Link, Container, Header, NavStyled } from './Layout.styled';
 
 export default function Layout() {
   return (
-    <div>
-      <header>
-        <nav>
-          <NavLink to="/" end>
+    <Container>
+      <Header>
+        <NavStyled>
+          <Link to="/" end>
             Home
-          </NavLink>
-          <NavLink to="/movies">Movies</NavLink>
-        </nav>
-      </header>
+          </Link>
+          <Link to="/movies">Movies</Link>
+        </NavStyled>
+      </Header>
       <main>
         <Suspense>
           <Outlet />
         </Suspense>
       </main>
-    </div>
+    </Container>
   );
 }

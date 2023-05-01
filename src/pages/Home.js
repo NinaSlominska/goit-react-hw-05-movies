@@ -10,8 +10,6 @@ export default function Home() {
       try {
         const films = await fetchTrending();
         setTrendingFilms(films.results);
-
-        console.log(films.results);
       } catch (error) {}
     };
     fetch();

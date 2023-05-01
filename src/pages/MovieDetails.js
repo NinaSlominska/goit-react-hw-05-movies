@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { fetchMovieId } from 'API';
 import MovieInfo from 'components/MovieInfo/MovieInfo';
 export default function MovieDetails() {
-  const [currentFilm, setCurentFilm] = useState('');
+  const [currentFilm, setCurentFilm] = useState(null);
   const { movieId } = useParams();
   useEffect(() => {
     const fetch = async () => {
@@ -15,9 +15,5 @@ export default function MovieDetails() {
     fetch();
   }, [movieId]);
 
-  return (
-    <div>
-      <MovieInfo currentFilm={currentFilm} />
-    </div>
-  );
+  return <div>{currentFilm && <MovieInfo currentFilm={currentFilm} />}</div>;
 }

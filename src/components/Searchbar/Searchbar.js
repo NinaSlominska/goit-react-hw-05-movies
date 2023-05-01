@@ -14,7 +14,7 @@ export const Searchbar = ({ onSubmit }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(searchValue);
+
     searchValue && onSubmit(searchValue);
   };
   const onChange = event => {
